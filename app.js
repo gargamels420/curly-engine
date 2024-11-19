@@ -1,11 +1,16 @@
-const express = require('express')
-const app = express()
-const port = 3000
+const express = require('express');
+const app = express();
+const PORT = process.env.PORT || 3000;
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+// Middleware
+app.use(express.json());
+app.use(express.static('public'));
 
-app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`)
-})
+// Routes
+const indexRoutes = require('./routes/index');
+app.use('/', indexRoutes);
+
+// Start Server
+app.listen(PORT, () => {
+    console.log(`Server is running on http://localhost:${PORT}`);
+});
