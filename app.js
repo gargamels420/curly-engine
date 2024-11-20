@@ -1,16 +1,19 @@
 const express = require('express');
+const path = require('path');
 const app = express();
 const PORT = process.env.PORT || 80;
 
-// Middleware
+// Middleware to serve static files
+app.use(express.static(path.join(__dirname, 'public')));
+
+// Middleware to parse JSON data
 app.use(express.json());
-app.use(express.static('public'));
 
-// Routes
-const indexRoutes = require('./routes/index');
-app.use('/', indexRoutes);
+// Game routes
+const gameRoutes = require('./routes/game');
+app.use('/api/game', gameRoutes);
 
-// Start Server
+// Start the server
 app.listen(PORT, () => {
-    console.log(`Server is running on http://localhost:${PORT}`);
+    console.log(`Game app running at http://localhost:${PORT}`);
 });
