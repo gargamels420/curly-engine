@@ -14,7 +14,11 @@ tableButtons.forEach(button => {
         await updateTable(value);
 
         // Update the content of the clicked button
-        clickedButton.innerHTML = value;
+        if (clickedButton.innerHTML=="") {
+            clickedButton.innerHTML = value;
+        }else {
+            clickedButton.innerHTML = "";
+        }
     });
 });
 
