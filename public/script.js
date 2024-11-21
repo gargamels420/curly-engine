@@ -1,7 +1,17 @@
 const scoreDisplay = document.getElementById('score');
 const gameButton = document.getElementById('game-button');
 const tableButtons = document.querySelectorAll('.table-button');
+// Function to send data to the server
+async function updateTable(value) {
+    const response = await fetch('/api/game/table', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ value })
+    });
 
+    const data = await response.json();
+    console.log('Server response:', data);
+}
 // Fetch the current score
 async function fetchScore() {
     const response = await fetch('/api/game/score');
@@ -42,17 +52,5 @@ tableButtons.forEach(button => {
 gameButton.addEventListener('click', () => {
     updateScore(1); // Add 1 point per click
 });
-
-// Function to send data to the server
-async function updateTable(value) {
-    const response = await fetch('/api/game/table', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ value })
-    });
-
-    const data = await response.json();
-    console.log('Server response:', data);
-}
 // Initialize the game
 fetchScore();
