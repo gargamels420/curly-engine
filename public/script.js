@@ -37,7 +37,7 @@ gameButton.addEventListener('click', () => {
 
 tableButton.addEventListener('click', () => {
     const value = document.getElementById('table-Button').value;
-    document.querySelector('table-Button').innerHTML = 'Hide';
+    updateTable(value);
 });
 // Initialize the game
 fetchScore();
