@@ -1,18 +1,14 @@
 const express = require('express');
 const router = express.Router();
 
-let playerScore = 0;
+// Simulate a table update API
+router.post('/table', (req, res) => {
+    const { value } = req.body;
 
-// Route to get the current score
-router.get('/score', (req, res) => {
-    res.json({ score: playerScore });
-});
-
-// Route to update the score
-router.post('/score', (req, res) => {
-    const { points } = req.body;
-    playerScore += points;
-    res.json({ message: 'Score updated!', score: playerScore });
+    console.log(`Received value: ${value}`);
+    
+    // Simulate a successful response
+    res.json({ message: 'Table updated successfully!' });
 });
 
 module.exports = router;
