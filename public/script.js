@@ -14,7 +14,7 @@ tableButtons.forEach(button => {
         await updateTable(value);
 
         // Update the content of the clicked button
-        clickedButton.innerHTML = 'Updated!';
+        clickedButton.innerHTML = value;
     });
 });
 
