@@ -1,8 +1,6 @@
 // Select all buttons with the class "table-button"
 const tableButtons = document.querySelectorAll('.table-button');
-var gameField = ["","","",
-                 "","","",
-                 "","",""]
+
 // Attach an event listener to each button
 tableButtons.forEach(button => {
     button.addEventListener('click', async (event) => {
@@ -12,14 +10,11 @@ tableButtons.forEach(button => {
         // Get the value from the data-value attribute
         const value = clickedButton.dataset.value;
 
-        // Send the value to the server
-        await updateTable(value);
-
         // Update the content of the clicked button
         if (clickedButton.innerHTML=="") {
-            clickedButton.innerHTML = value;
-        }else {
-            clickedButton.innerHTML = "";
+            clickedButton.innerHTML = "x";
+            // Send the value to the server
+            await updateTable(value);
         }
     });
 });
