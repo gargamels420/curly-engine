@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-var gameField = ["","","",
+let gameField = ["","","",
                  "","","",
                  "","",""];
-var xField = [];
-var oField = [];
-var win = false;
+let xField = [];
+let oField = [];
+let win = false;
 
 // Simulate a table update API
 router.post('/table', (req, res) => {

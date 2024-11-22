@@ -28,7 +28,8 @@ async function updateTable(value) {
     });
 
     const data = await response.json();
-    if (data == true) {
-        document.querySelector('status').innerHTML = "you won"
+    document.querySelector('status').innerHTML = data;
+    if (data["message"] == true) {
+        document.querySelector('status').innerHTML = "you won";
     }
 }
