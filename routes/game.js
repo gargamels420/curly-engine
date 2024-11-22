@@ -14,7 +14,7 @@ router.post('/table', (req, res) => {
     xField.push(value)
     console.log(gameField);
     if (xField.length <= 2 ) {
-        check();
+        check(value);
     }
     
     // Simulate a successful response
