@@ -28,5 +28,7 @@ async function updateTable(value) {
     });
 
     const data = await response.json();
-    console.log('Server response:', data);
+    if (data == true) {
+        document.querySelectorAll('status').innerHTML = "you won"
+    }
 }

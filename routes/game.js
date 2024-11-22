@@ -18,7 +18,7 @@ router.post('/table', (req, res) => {
     }
     
     // Simulate a successful response
-    res.json({ message: 'Table updated successfully!' });
+    res.json({ message: win });
 });
 
 async function check(value) {
