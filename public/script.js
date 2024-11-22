@@ -1,5 +1,6 @@
 // Select all buttons with the class "table-button"
 const tableButtons = document.querySelectorAll('.table-button');
+const scoreDisplay = document.getElementById('score');
 
 // Attach an event listener to each button
 tableButtons.forEach(button => {
@@ -28,8 +29,8 @@ async function updateTable(value) {
     });
 
     const data = await response.json();
-    document.querySelector('status').innerHTML = data;
+    scoreDisplay.textContent = data;
     if (data["message"] == true) {
-        document.querySelector('status').innerHTML = "you won";
+        scoreDisplay.textContent = "you won";
     }
 }
