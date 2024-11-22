@@ -21,11 +21,11 @@ router.post('/table', (req, res) => {
     res.json({ message: win });
 });
 
-async function check(value) {
-    if (gameField[value-1]=="x") {
-        if (gameField[value-2]=="x") {
+async function check(va) {
+    if (gameField[va-1]=="x") {
+        if (gameField[va-2]=="x") {
             win = true;
-        } else if (gameField[value+1]=="x") {
+        } else if (gameField[va+1]=="x") {
             win = true;
         }
     }
