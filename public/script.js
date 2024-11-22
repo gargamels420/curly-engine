@@ -1,6 +1,8 @@
 // Select all buttons with the class "table-button"
 const tableButtons = document.querySelectorAll('.table-button');
-
+var gameField = ["","","",
+                 "","","",
+                 "","",""]
 // Attach an event listener to each button
 tableButtons.forEach(button => {
     button.addEventListener('click', async (event) => {
