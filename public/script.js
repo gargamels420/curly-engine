@@ -29,6 +29,6 @@ async function updateTable(value) {
 
     const data = await response.json();
     if (data == true) {
-        document.querySelectorAll('status').innerHTML = "you won"
+        document.querySelector('status').innerHTML = "you won"
     }
 }
