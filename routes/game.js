@@ -14,9 +14,11 @@ router.post('/table', (req, res) => {
     xField.push(value)
     console.log(gameField);
     if (xField.length <= 2 ) {
+        win = "ha";
         check(value);
     }
     
+
     // Simulate a successful response
     res.json({ message: win });
 });
