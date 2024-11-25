@@ -13,7 +13,7 @@ router.post('/table', (req, res) => {
     gameField[value] = "x";
     xField.push(value)
     console.log(gameField);
-    if (xField.length <= 2 ) {
+    if (xField.length >= 2 ) {
         win = "ha";
         check(value);
     }
