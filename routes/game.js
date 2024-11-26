@@ -13,13 +13,13 @@ router.post('/table', (req, res) => {
     gameField[row][column] = "x";
     tahy = tahy + 1;
     res.json({ message: row });
-    if (tahy >= 2) {
+    if (tahy > 2) {
         checkColumn(row, column);
     }
 
 
     // Simulate a successful response
-    //res.json({ message: win });
+    res.json({ message: win });
 });
 
 async function checkColumn(row, column) {
