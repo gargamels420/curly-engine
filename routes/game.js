@@ -15,7 +15,7 @@ router.post('/table', (req, res) => {
 
 
     // Simulate a successful response
-    res.json({ row: "win" });
+    res.json({ message: "win" });
 });
 
 async function checkColumn(row, column) {
