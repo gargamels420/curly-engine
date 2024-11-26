@@ -8,11 +8,10 @@ let win = false;
 
 // Simulate a table update API
 router.post('/table', (req, res) => {
-    const { row } = req.row;
-    const { column } = req.column;
+    const { row, column } = req.body;
     gameField[row][column] = "x";
     tahy = tahy + 1;
-    //checkColumn(row, column);
+    checkColumn(row, column);
 
 
     // Simulate a successful response

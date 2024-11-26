@@ -26,8 +26,7 @@ async function updateTable(row, column) {
     const response = await fetch('/api/game/table', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        row: JSON.stringify({ row }),
-        column: JSON.stringify({ column })
+        body: JSON.stringify({ row, column })
     });
 
     const data = await response.json();
