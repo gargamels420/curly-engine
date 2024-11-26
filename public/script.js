@@ -13,16 +13,16 @@ tableButtons.forEach(button => {
         const column = clickedButton.dataset.column;
 
         // Update the content of the clicked button
-        if (clickedButton.innerHTML=="") {
+        if (clickedButton.innerHTML == "") {
             clickedButton.innerHTML = "x";
             // Send the value to the server
-            await updateTable(row,column);
+            await updateTable(row, column);
         }
     });
 });
 
 // Function to send data to the server
-async function updateTable(row,column) {
+async function updateTable(row, column) {
     const response = await fetch('/api/game/table', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -31,9 +31,9 @@ async function updateTable(row,column) {
     });
 
     const data = await response.json();
+    scoreDisplay.textContent = data;
+    if (data.message == true) {
+        scoreDisplay.textContent = "you won";
+    }
 }
 //scoreDisplay.textContent = "update";
-scoreDisplay.textContent = data;
-if (data.message == true) {
-    scoreDisplay.textContent = "you won";
-}
