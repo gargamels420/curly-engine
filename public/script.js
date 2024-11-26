@@ -11,7 +11,7 @@ tableButtons.forEach(button => {
         // Get the value from the data-value attribute
         const row = clickedButton.dataset.row;
         const column = clickedButton.dataset.column;
-        scoreDisplay.textContent = row,column;
+        scoreDisplay.textContent = column;
 
         // Update the content of the clicked button
         if (clickedButton.innerHTML=="") {
