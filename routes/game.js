@@ -12,7 +12,7 @@ router.post('/table', (req, res) => {
     const { column } = req.column;
     gameField[row][column] = "x";
     tahy = tahy + 1;
-    checkColumn(row, column);
+    //checkColumn(row, column);
 
 
     // Simulate a successful response
