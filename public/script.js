@@ -9,7 +9,8 @@ tableButtons.forEach(button => {
         const clickedButton = event.target;
 
         // Get the value from the data-value attribute
-        const value = clickedButton.dataset.value;
+        const row = clickedButton.dataset.row;
+        const column = clickedButton.dataset.column;
 
         // Update the content of the clicked button
         if (clickedButton.innerHTML=="") {
@@ -21,11 +22,12 @@ tableButtons.forEach(button => {
 });
 
 // Function to send data to the server
-async function updateTable(value) {
+async function updateTable(row,column) {
     const response = await fetch('/api/game/table', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ value })
+        row: JSON.stringify({ row }),
+        column: JSON.stringify({ column })
     });
 
     const data = await response.json();
