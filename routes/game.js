@@ -11,7 +11,8 @@ router.post('/table', (req, res) => {
     const { row } = req.row;
     const { column } = req.column;
     gameField[row][column] = "x";
-    tahy = taky + 1;
+    tahy = tahy + 1;
+    res.json({ message: row });
     if (tahy >= 2) {
         checkColumn(row, column);
     }
