@@ -12,7 +12,6 @@ router.post('/table', (req, res) => {
     const { column } = req.column;
     gameField[row][column] = "x";
     tahy = tahy + 1;
-    res.json({ message: row });
     checkColumn(row, column);
 
 
