@@ -31,9 +31,9 @@ async function updateTable(row,column) {
     });
 
     const data = await response.json();
-    scoreDisplay.textContent = "update";
-    //scoreDisplay.textContent = data;
-    if (data.message == true) {
-        scoreDisplay.textContent = "you won";
-    }
+}
+//scoreDisplay.textContent = "update";
+scoreDisplay.textContent = data;
+if (data.message == true) {
+    scoreDisplay.textContent = "you won";
 }
