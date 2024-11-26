@@ -16,7 +16,7 @@ tableButtons.forEach(button => {
         if (clickedButton.innerHTML=="") {
             clickedButton.innerHTML = "x";
             // Send the value to the server
-            await updateTable(value);
+            await updateTable(row,column);
         }
     });
 });
