@@ -98,7 +98,6 @@ async function checkDiagonal(row, column) {
         }
     }
     else {
-        checkDiagonal();
     }
 }
 
