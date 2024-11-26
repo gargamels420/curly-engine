@@ -16,7 +16,6 @@ tableButtons.forEach(button => {
         if (clickedButton.innerHTML=="") {
             clickedButton.innerHTML = "x";
             // Send the value to the server
-            scoreDisplay.textContent = "update";
             await updateTable(row,column);
         }
     });
@@ -32,7 +31,8 @@ async function updateTable(row,column) {
     });
 
     const data = await response.json();
-    scoreDisplay.textContent = data;
+    scoreDisplay.textContent = "update";
+    //scoreDisplay.textContent = data;
     if (data.message == true) {
         scoreDisplay.textContent = "you won";
     }
