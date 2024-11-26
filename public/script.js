@@ -16,6 +16,7 @@ tableButtons.forEach(button => {
         if (clickedButton.innerHTML=="") {
             clickedButton.innerHTML = "x";
             // Send the value to the server
+            scoreDisplay.textContent = "update";
             await updateTable(row,column);
         }
     });
