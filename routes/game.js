@@ -97,6 +97,7 @@ async function checkDiagonal(row, column) {
     }
     else {
         win = "What did you do";
+        
     }
 }
 
